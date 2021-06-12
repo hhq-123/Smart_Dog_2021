@@ -36,5 +36,8 @@ smartdog_cm\lobotservocontroller.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4x
 smartdog_cm\lobotservocontroller.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 smartdog_cm\lobotservocontroller.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 smartdog_cm\lobotservocontroller.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
+smartdog_cm\lobotservocontroller.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h
+smartdog_cm\lobotservocontroller.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h
+smartdog_cm\lobotservocontroller.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h
 smartdog_cm\lobotservocontroller.o: D:\Program Files\IDE\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
 smartdog_cm\lobotservocontroller.o: D:\Program Files\IDE\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

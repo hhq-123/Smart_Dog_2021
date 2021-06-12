@@ -35,3 +35,17 @@ smartdog_cm\jy901.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
 smartdog_cm\jy901.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 smartdog_cm\jy901.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 smartdog_cm\jy901.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
+smartdog_cm\jy901.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h
+smartdog_cm\jy901.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h
+smartdog_cm\jy901.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h
+smartdog_cm\jy901.o: ../USB_DEVICE/App/usbd_cdc_if.h
+smartdog_cm\jy901.o: ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc/usbd_cdc.h
+smartdog_cm\jy901.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h
+smartdog_cm\jy901.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h
+smartdog_cm\jy901.o: ../USB_DEVICE/Target/usbd_conf.h
+smartdog_cm\jy901.o: D:\Program Files\IDE\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+smartdog_cm\jy901.o: D:\Program Files\IDE\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+smartdog_cm\jy901.o: D:\Program Files\IDE\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+smartdog_cm\jy901.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h
+smartdog_cm\jy901.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h
+smartdog_cm\jy901.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h

@@ -34,4 +34,8 @@ JY901九轴https://blog.csdn.net/Fred_1986/article/details/108350958
 然后板子烧了
 
 2021/06/12 多云，明天组长来调狗，我觉得要下雨
-今天计划写完 蓝牙 
+今天计划写完 蓝牙 JY901等，并搭建好环境供他人继续编写
+
+为什么不直接用usb进行通讯呢
+USB虚拟串口https://blog.csdn.net/qq_36561846/article/details/109427606
+

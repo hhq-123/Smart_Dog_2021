@@ -42,7 +42,7 @@ void moveServo(uint8_t servoID, uint16_t Position, uint16_t Time)
 	LobotTxBuf[7] = servoID;                  //舵机ID
 	LobotTxBuf[8] = GET_LOW_BYTE(Position);   //取得目标位置的低八位
 	LobotTxBuf[9] = GET_HIGH_BYTE(Position);  //取得目标位置的高八位
-	HAL_UART_Transmit( &huart6 , LobotTxBuf , 10, 0xFFFF);
+	HAL_UART_Transmit( &huart2 , LobotTxBuf , 10, 0xFFFF);
 	//uartWriteBuf(LobotTxBuf, 10);
 }
 
@@ -75,7 +75,7 @@ void moveServosByArray(LobotServo servos[], uint8_t Num, uint16_t Time)
 		LobotTxBuf[index++] = GET_HIGH_BYTE(servos[i].Position);//填充目标位置高八位
 	}
 	
-	HAL_UART_Transmit( &huart6 , LobotTxBuf , LobotTxBuf[2] + 2, 0xFFFF);
+	HAL_UART_Transmit( &huart2 , LobotTxBuf , LobotTxBuf[2] + 2, 0xFFFF);
 	//uartWriteBuf(LobotTxBuf, LobotTxBuf[2] + 2);             //发送
 }
 
@@ -114,7 +114,7 @@ void moveServos(uint8_t Num, uint16_t Time, ...)
 
 	va_end(arg_ptr);  //置空arg_ptr
 	
-	HAL_UART_Transmit( &huart6 , LobotTxBuf , LobotTxBuf[2] + 2, 0xFFFF);
+	HAL_UART_Transmit( &huart2 , LobotTxBuf , LobotTxBuf[2] + 2, 0xFFFF);
 	//uartWriteBuf(LobotTxBuf, LobotTxBuf[2] + 2);    //发送
 }
 
@@ -135,7 +135,7 @@ void runActionGroup(uint8_t numOfAction, uint16_t Times)
 	LobotTxBuf[5] = GET_LOW_BYTE(Times);    //取得要运行次数的低八位
 	LobotTxBuf[6] = GET_HIGH_BYTE(Times);   //取得要运行次数的高八位
 
-	HAL_UART_Transmit( &huart6 , LobotTxBuf , 7 , 0xFFFF);
+	HAL_UART_Transmit( &huart2 , LobotTxBuf , 7 , 0xFFFF);
 	//uartWriteBuf(LobotTxBuf, 7);            //发送
 }
 
@@ -153,7 +153,7 @@ void stopActionGroup(void)
 	LobotTxBuf[2] = 2;                //数据长度，数据帧除帧头部分数据字节数，此命令固定为2
 	LobotTxBuf[3] = CMD_ACTION_GROUP_STOP;   //填充停止运行动作组命令
 
-	HAL_UART_Transmit( &huart6 , LobotTxBuf , 4 , 0xFFFF);
+	HAL_UART_Transmit( &huart2 , LobotTxBuf , 4 , 0xFFFF);
 	//uartWriteBuf(LobotTxBuf, 4);      //发送
 }
 /*********************************************************************************
@@ -172,7 +172,7 @@ void setActionGroupSpeed(uint8_t numOfAction, uint16_t Speed)
 	LobotTxBuf[5] = GET_LOW_BYTE(Speed);     //获得目标速度的低八位
 	LobotTxBuf[6] = GET_HIGH_BYTE(Speed);    //获得目标熟读的高八位
 
-	HAL_UART_Transmit( &huart6 , LobotTxBuf , 7 , 0xFFFF);
+	HAL_UART_Transmit( &huart2 , LobotTxBuf , 7 , 0xFFFF);
 	//uartWriteBuf(LobotTxBuf, 7);             //发送
 }
 
@@ -203,7 +203,7 @@ void getBatteryVoltage(void)
 	LobotTxBuf[2] = 2;             //数据长度，数据帧除帧头部分数据字节数，此命令固定为2
 	LobotTxBuf[3] = CMD_GET_BATTERY_VOLTAGE;  //填充获取电池电压命令
 
-	HAL_UART_Transmit( &huart6 , LobotTxBuf , 4 , 0xFFFF);
+	HAL_UART_Transmit( &huart2 , LobotTxBuf , 4 , 0xFFFF);
 	//uartWriteBuf(LobotTxBuf, 4);   //发送
 }
 

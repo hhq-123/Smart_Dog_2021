@@ -33,6 +33,9 @@ smartdog_cm\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
 smartdog_cm\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 smartdog_cm\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 smartdog_cm\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
+smartdog_cm\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h
+smartdog_cm\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h
+smartdog_cm\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h
 smartdog_cm\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h
 smartdog_cm\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
 smartdog_cm\main.o: ../Core/Inc/FreeRTOSConfig.h
@@ -47,7 +50,20 @@ smartdog_cm\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cms
 smartdog_cm\main.o: ../Core/Inc/dma.h
 smartdog_cm\main.o: ../Core/Inc/i2c.h
 smartdog_cm\main.o: ../Core/Inc/usart.h
+smartdog_cm\main.o: ../USB_DEVICE/App/usb_device.h
+smartdog_cm\main.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h
+smartdog_cm\main.o: ../USB_DEVICE/Target/usbd_conf.h
+smartdog_cm\main.o: D:\Program Files\IDE\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+smartdog_cm\main.o: D:\Program Files\IDE\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+smartdog_cm\main.o: D:\Program Files\IDE\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 smartdog_cm\main.o: ../Core/Inc/gpio.h
+smartdog_cm\main.o: ../USB_DEVICE/App/usbd_cdc_if.h
+smartdog_cm\main.o: ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc/usbd_cdc.h
+smartdog_cm\main.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h
+smartdog_cm\main.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h
+smartdog_cm\main.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h
+smartdog_cm\main.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h
 smartdog_cm\main.o: ../Core/Inc/test_workspace.h
 smartdog_cm\main.o: ../Core/Inc/Quadrudep_huaner.h
 smartdog_cm\main.o: ../Core/Inc/OLED.h
+smartdog_cm\main.o: ../Core/Inc/JY901.h

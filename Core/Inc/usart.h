@@ -32,18 +32,17 @@
 
 extern UART_HandleTypeDef huart1;
 extern UART_HandleTypeDef huart2;
-extern UART_HandleTypeDef huart6;
 
 /* USER CODE BEGIN Private defines */
 
-#define Rx_uart1_Max 256
+#define Rx_uart_Max 128
 
 #pragma pack(1)
 typedef struct
 {
 	volatile uint8_t RxFlag;
 	volatile uint16_t RxLen;
-	uint8_t RxBuff[256];
+	uint8_t RxBuff[Rx_uart_Max];
 }USART_RECEIVETYPE;
 
 #pragma pack()
@@ -51,7 +50,6 @@ typedef struct
 
 void MX_USART1_UART_Init(void);
 void MX_USART2_UART_Init(void);
-void MX_USART6_UART_Init(void);
 
 /* USER CODE BEGIN Prototypes */
 void USER_UART_Init(void);

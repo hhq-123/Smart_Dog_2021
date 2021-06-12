@@ -106,5 +106,5 @@ void ik_Move(double x[], double y[], double z[])
 {
 	ik_3dof(x, y, z);
 	Move(ham, shank, wai);
-	printf("shank%f\r\n", shank[0]);
+	//printf("shank%f\r\n", shank[0]);
 }
