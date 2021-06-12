@@ -14,7 +14,7 @@
 #define GET_HIGH_BYTE(A) ((uint8_t)((A) >> 8))
 //宏函数 获得A的高八位
 
-extern bool isUartRxCompleted;
+extern bool isUart6RxCompleted;
 
 uint8_t LobotTxBuf[128];  //发送缓存
 uint8_t LobotRxBuf[16];
@@ -210,8 +210,8 @@ void getBatteryVoltage(void)
 void receiveHandle()
 {
 	//可以根据二次开发手册添加其他指令
-	if (isUartRxCompleted) {
-		isUartRxCompleted = false;
+	if (isUart6RxCompleted) {
+		isUart6RxCompleted = false;
 		switch (LobotRxBuf[3]) {
 		case CMD_GET_BATTERY_VOLTAGE: //获取电压
 			batteryVolt = (((uint16_t)(LobotRxBuf[5])) << 8) | (LobotRxBuf[4]);

@@ -26,6 +26,9 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+
+#include "queue.h"
+
 #include "stdio.h"
 #include "usart.h"
 #include "LobotServoController.h"
@@ -49,14 +52,38 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN Variables */
-
+int isFreeRTOSSysOn = 0;
 /* USER CODE END Variables */
 /* Definitions for defaultTask */
 osThreadId_t defaultTaskHandle;
 const osThreadAttr_t defaultTask_attributes = {
   .name = "defaultTask",
   .priority = (osPriority_t) osPriorityNormal,
+  .stack_size = 256 * 4
+};
+/* Definitions for usart1RxTask */
+osThreadId_t usart1RxTaskHandle;
+const osThreadAttr_t usart1RxTask_attributes = {
+  .name = "usart1RxTask",
+  .priority = (osPriority_t) osPriorityLow,
   .stack_size = 128 * 4
+};
+/* Definitions for blueToothRxTask */
+osThreadId_t blueToothRxTaskHandle;
+const osThreadAttr_t blueToothRxTask_attributes = {
+  .name = "blueToothRxTask",
+  .priority = (osPriority_t) osPriorityNormal,
+  .stack_size = 128 * 4
+};
+/* Definitions for usart1RxMsgQueue */
+osMessageQueueId_t usart1RxMsgQueueHandle;
+const osMessageQueueAttr_t usart1RxMsgQueue_attributes = {
+  .name = "usart1RxMsgQueue"
+};
+/* Definitions for blueToothRxMsgQueue */
+osMessageQueueId_t blueToothRxMsgQueueHandle;
+const osMessageQueueAttr_t blueToothRxMsgQueue_attributes = {
+  .name = "blueToothRxMsgQueue"
 };
 
 /* Private function prototypes -----------------------------------------------*/
@@ -65,6 +92,8 @@ const osThreadAttr_t defaultTask_attributes = {
 /* USER CODE END FunctionPrototypes */
 
 void StartDefaultTask(void *argument);
+void StartUsart1RxTask(void *argument);
+void StartBlueToothRxTask(void *argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -90,6 +119,13 @@ void MX_FREERTOS_Init(void) {
   /* start timers, add new ones, ... */
   /* USER CODE END RTOS_TIMERS */
 
+  /* Create the queue(s) */
+  /* creation of usart1RxMsgQueue */
+  usart1RxMsgQueueHandle = osMessageQueueNew (3, sizeof(USART_RECEIVETYPE), &usart1RxMsgQueue_attributes);
+
+  /* creation of blueToothRxMsgQueue */
+  blueToothRxMsgQueueHandle = osMessageQueueNew (3, sizeof(USART_RECEIVETYPE), &blueToothRxMsgQueue_attributes);
+
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
   /* USER CODE END RTOS_QUEUES */
@@ -98,8 +134,15 @@ void MX_FREERTOS_Init(void) {
   /* creation of defaultTask */
   defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
 
+  /* creation of usart1RxTask */
+  usart1RxTaskHandle = osThreadNew(StartUsart1RxTask, NULL, &usart1RxTask_attributes);
+
+  /* creation of blueToothRxTask */
+  blueToothRxTaskHandle = osThreadNew(StartBlueToothRxTask, NULL, &blueToothRxTask_attributes);
+
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
+	isFreeRTOSSysOn = 1;
   /* USER CODE END RTOS_THREADS */
 
 }
@@ -117,7 +160,6 @@ void StartDefaultTask(void *argument)
   /* Infinite loop */
   for(;;)
   {
-		//HAL_UART_Transmit( &huart6 , (uint8_t *)"hello DISCO\r\n" , sizeof("hello DISCO\r\n"), 0xFFFF);
 		printf("StartDefaultTask\n\r");
 		Trot_run();
 		//moveServo(25, step, 50); //1秒移动1号舵机至2000位置
@@ -127,6 +169,48 @@ void StartDefaultTask(void *argument)
     osDelay(1000);
   }
   /* USER CODE END StartDefaultTask */
+}
+
+/* USER CODE BEGIN Header_StartUsart1RxTask */
+/**
+* @brief Function implementing the usart1RxTask thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartUsart1RxTask */
+void StartUsart1RxTask(void *argument)
+{
+  /* USER CODE BEGIN StartUsart1RxTask */
+	USART_RECEIVETYPE pUARTR1;
+	
+	printf("3 Start usartRxFunc\r\n");
+  /* Infinite loop */
+  for(;;)
+  {
+		xQueueReceive(usart1RxMsgQueueHandle, (void*)&pUARTR1, osWaitForever);
+		printf("Run\r\n");
+		printf("3 Run ：%s\r\n", pUARTR1.RxBuff);
+		printf("ends\r\n");
+  }
+  /* USER CODE END StartUsart1RxTask */
+}
+
+/* USER CODE BEGIN Header_StartBlueToothRxTask */
+/**
+* @brief Function implementing the blueToothRxTask thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartBlueToothRxTask */
+void StartBlueToothRxTask(void *argument)
+{
+  /* USER CODE BEGIN StartBlueToothRxTask */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END StartBlueToothRxTask */
 }
 
 /* Private application code --------------------------------------------------*/

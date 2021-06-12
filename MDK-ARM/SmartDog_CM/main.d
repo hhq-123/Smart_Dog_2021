@@ -26,6 +26,8 @@ smartdog_cm\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h
 smartdog_cm\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h
 smartdog_cm\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h
 smartdog_cm\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h
+smartdog_cm\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h
+smartdog_cm\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h
 smartdog_cm\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h
 smartdog_cm\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
 smartdog_cm\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
@@ -42,7 +44,10 @@ smartdog_cm\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrapp
 smartdog_cm\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
 smartdog_cm\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
 smartdog_cm\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h
+smartdog_cm\main.o: ../Core/Inc/dma.h
+smartdog_cm\main.o: ../Core/Inc/i2c.h
 smartdog_cm\main.o: ../Core/Inc/usart.h
 smartdog_cm\main.o: ../Core/Inc/gpio.h
-smartdog_cm\main.o: ../Core/Inc/Quadrudep_huaner.h
 smartdog_cm\main.o: ../Core/Inc/test_workspace.h
+smartdog_cm\main.o: ../Core/Inc/Quadrudep_huaner.h
+smartdog_cm\main.o: ../Core/Inc/OLED.h

@@ -20,12 +20,16 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "cmsis_os.h"
+#include "dma.h"
+#include "i2c.h"
 #include "usart.h"
 #include "gpio.h"
-#include "Quadrudep_huaner.h"
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "test_workspace.h"
+#include "Quadrudep_huaner.h"
+#include "OLED.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -46,6 +50,7 @@
 
 /* USER CODE BEGIN PV */
 double a[4] = {0.0};
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -91,29 +96,33 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_USART1_UART_Init();
   MX_USART2_UART_Init();
   MX_USART6_UART_Init();
+  MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
+	USER_UART_Init();
+	
 	Servo_Init();
 	ik_Move(inx,  iny,  inz);
+	OLED_Init();
   /* USER CODE END 2 */
-	
+
   /* Init scheduler */
-  //osKernelInitialize();  /* Call init function for freertos objects (in freertos.c) */
-  //MX_FREERTOS_Init();
+  osKernelInitialize();  /* Call init function for freertos objects (in freertos.c) */
+  MX_FREERTOS_Init();
   /* Start scheduler */
-  //osKernelStart();
+  osKernelStart();
+
   /* We should never get here as control is now taken by the scheduler */
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
     /* USER CODE END WHILE */
-		//Trot_run();
-		//HAL_Delay(1);
+
     /* USER CODE BEGIN 3 */
-		//HAL_UART_Transmit( &huart6 , (uint8_t *)"hello DISCO\r\n" , sizeof("hello DISCO\r\n"), 0xFFFF);
   }
   /* USER CODE END 3 */
 }
