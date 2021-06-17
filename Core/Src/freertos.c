@@ -34,8 +34,10 @@
 #include "usbd_cdc_if.h"
 
 #include "queue.h"
+#include "semphr.h"
 
 #include "LobotServoController.h"
+#include "Quadrudep_huaner.h"
 #include "test_workspace.h"
 
 #include "Dog_interface.h"
@@ -60,6 +62,10 @@
 /* USER CODE BEGIN Variables */
 
 int isFreeRTOSSysOn = 0;
+
+uint16_t  LSCControlTimerCount = 0;
+extern uint16_t LSCControlPeriod;
+
 /* USER CODE END Variables */
 /* Definitions for defaultTask */
 osThreadId_t defaultTaskHandle;
@@ -80,6 +86,16 @@ osMessageQueueId_t usart1RxMsgQueueHandle;
 const osMessageQueueAttr_t usart1RxMsgQueue_attributes = {
   .name = "usart1RxMsgQueue"
 };
+/* Definitions for LSCControlTimer */
+osTimerId_t LSCControlTimerHandle;
+const osTimerAttr_t LSCControlTimer_attributes = {
+  .name = "LSCControlTimer"
+};
+/* Definitions for gaitControlBinarySem */
+osSemaphoreId_t gaitControlBinarySemHandle;
+const osSemaphoreAttr_t gaitControlBinarySem_attributes = {
+  .name = "gaitControlBinarySem"
+};
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
@@ -88,6 +104,7 @@ const osMessageQueueAttr_t usart1RxMsgQueue_attributes = {
 
 void StartDefaultTask(void *argument);
 void StartUsart1RxTask(void *argument);
+void LSCControlCallback(void *argument);
 
 extern void MX_USB_DEVICE_Init(void);
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
@@ -106,9 +123,17 @@ void MX_FREERTOS_Init(void) {
   /* add mutexes, ... */
   /* USER CODE END RTOS_MUTEX */
 
+  /* Create the semaphores(s) */
+  /* creation of gaitControlBinarySem */
+  gaitControlBinarySemHandle = osSemaphoreNew(1, 1, &gaitControlBinarySem_attributes);
+
   /* USER CODE BEGIN RTOS_SEMAPHORES */
   /* add semaphores, ... */
   /* USER CODE END RTOS_SEMAPHORES */
+
+  /* Create the timer(s) */
+  /* creation of LSCControlTimer */
+  LSCControlTimerHandle = osTimerNew(LSCControlCallback, osTimerPeriodic, NULL, &LSCControlTimer_attributes);
 
   /* USER CODE BEGIN RTOS_TIMERS */
   /* start timers, add new ones, ... */
@@ -149,10 +174,11 @@ void StartDefaultTask(void *argument)
   MX_USB_DEVICE_Init();
   /* USER CODE BEGIN StartDefaultTask */
   /* Infinite loop */
+	osTimerStart(LSCControlTimerHandle,1);
   for(;;)
   {
 		Gait_Controller();
-    osDelay(100);
+    //osDelay(1);
   }
   /* USER CODE END StartDefaultTask */
 }
@@ -174,11 +200,26 @@ void StartUsart1RxTask(void *argument)
   for(;;)
   {
 		xQueueReceive(usart1RxMsgQueueHandle, (void*)&pUARTR1, osWaitForever);
-		bluetoothController(pUARTR1.RxBuff[0]);
+		bluetoothTranslater(pUARTR1.RxBuff);
 		printf("UARTR1: \"%s \" ends\r\n", pUARTR1.RxBuff);
-		
   }
   /* USER CODE END StartUsart1RxTask */
+}
+
+/* LSCControlCallback function */
+void LSCControlCallback(void *argument)
+{
+  /* USER CODE BEGIN LSCControlCallback */
+	
+	
+	LSCControlTimerCount++;
+	if(LSCControlTimerCount == LSCControlPeriod)
+	{
+		LSC_communication();
+		xSemaphoreGive(gaitControlBinarySemHandle);
+		LSCControlTimerCount = 0;
+	}
+  /* USER CODE END LSCControlCallback */
 }
 
 /* Private application code --------------------------------------------------*/

@@ -77,9 +77,7 @@ void MX_FREERTOS_Init(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-	double inx[4] = {0,0,0,0};
-	double iny[4] = {H,H,H,H};
-	double inz[4] = {d, d, d ,d};
+	
 	//char ch=0;
   /* USER CODE END 1 */
 
@@ -111,6 +109,7 @@ int main(void)
 	
 	MX_USB_DEVICE_Init();
 	Servo_Init();
+	gait_Init();
 	OLED_Init();
 	printf("System Init Success\n\r");
 	usb_printf("System Init Success\n\r");

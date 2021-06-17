@@ -2,12 +2,21 @@
 #include <LobotServoController.h>
 #include "math.h"
 #include "stdio.h"
+#include "FreeRTOS.h"
+#include "cmsis_os.h"
+#include "task.h"
+#include "semphr.h"
+
 
 LobotServo servos[12];   //舵机ID位置结构数组
+
+uint16_t LSCControlPeriod = 50;
 
 double shank[4];
 double ham[4];
 double wai[4];
+
+extern osSemaphoreId_t gaitControlBinarySemHandle;
 
 double AtoV(double angle)
 {
@@ -48,7 +57,7 @@ void Servo_Init(void)
 }
 
 
-void Move(double ham[],double shank[], double wai[])
+void Move(double ham[],double shank[], double wai[],  uint16_t Time)
 {	
 	servos[0].Position = AtoV(VtoA(LF_wai_Init)-(wai[0]));
 	servos[3].Position = AtoV(VtoA(RF_wai_Init)+(wai[1]));
@@ -67,7 +76,29 @@ void Move(double ham[],double shank[], double wai[])
 	servos[10].Position =AtoV(VtoA(LB_ham_Init)-90+ham[3]);
 	servos[11].Position =AtoV(VtoA(LB_shank_Init)+90-shank[3]);
 	
-	moveServosByArray(servos,12,1);  //控制两个舵机，移动时间1ms,ID和位置有servos指定
+	moveServosByArray(servos,12,Time);  //控制两个舵机，移动时间1ms,ID和位置有servos指定
+}
+
+void Move_zero(uint16_t Time)
+{ 
+ servos[0].Position = LF_wai_Init;
+ servos[3].Position = RF_wai_Init;
+ servos[6].Position = RB_wai_Init;
+ servos[9].Position = LB_wai_Init;
+   
+ servos[1].Position = LF_ham_Init;
+ servos[2].Position = LF_shank_Init;
+ 
+ servos[4].Position = RF_ham_Init;
+ servos[5].Position = RF_shank_Init;
+ 
+ servos[7].Position =RB_ham_Init;
+ servos[8].Position = RB_shank_Init;
+ 
+ servos[10].Position =LB_ham_Init;
+ servos[11].Position =LB_shank_Init;
+ 
+ moveServosByArray(servos,12,Time);  //控制两个舵机，移动时间1ms,ID和位置有servos指定
 }
 
 double ShankAngleConverter(double theta)
@@ -102,9 +133,28 @@ void ik_3dof(double x[], double y[], double z[])
 	}
 }
 
+
+
+void gait_Init(void)
+{
+	double inx[4] = {0,0,0,0};
+	double iny[4] = {H,H,H,H};
+	double inz[4] = {d, d, d ,d};
+	ik_3dof(inx, iny, inz);
+	//Move(ham, shank, wai, 1);
+	//printf("shank%f\r\n", shank[0]);
+}
+
 void ik_Move(double x[], double y[], double z[])
 {
 	ik_3dof(x, y, z);
-	Move(ham, shank, wai);
+	//Move(ham, shank, wai, LSCControlPeriod);
+	//Move(ham, shank, wai, 1);
 	//printf("shank%f\r\n", shank[0]);
+	xSemaphoreTake(gaitControlBinarySemHandle, osWaitForever);
+}
+
+void LSC_communication(void)
+{
+	Move(ham, shank, wai, LSCControlPeriod);
 }

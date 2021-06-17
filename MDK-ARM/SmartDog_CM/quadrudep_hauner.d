@@ -1,6 +1,5 @@
 smartdog_cm\quadrudep_hauner.o: ..\Core\Src\Quadrudep_hauner.c
 smartdog_cm\quadrudep_hauner.o: ../Core/Inc/Quadrudep_huaner.h
-smartdog_cm\quadrudep_hauner.o: ../Core/Inc/LobotServoController.h
 smartdog_cm\quadrudep_hauner.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xc.h
 smartdog_cm\quadrudep_hauner.o: ../Drivers/CMSIS/Include/core_cm4.h
 smartdog_cm\quadrudep_hauner.o: D:\Program Files\IDE\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
@@ -9,6 +8,7 @@ smartdog_cm\quadrudep_hauner.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 smartdog_cm\quadrudep_hauner.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
 smartdog_cm\quadrudep_hauner.o: ../Drivers/CMSIS/Include/mpu_armv7.h
 smartdog_cm\quadrudep_hauner.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h
+smartdog_cm\quadrudep_hauner.o: ../Core/Inc/LobotServoController.h
 smartdog_cm\quadrudep_hauner.o: ../Core/Inc/bool.h
 smartdog_cm\quadrudep_hauner.o: ../Core/Inc/usart.h
 smartdog_cm\quadrudep_hauner.o: ../Core/Inc/main.h
@@ -42,3 +42,16 @@ smartdog_cm\quadrudep_hauner.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll
 smartdog_cm\quadrudep_hauner.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h
 smartdog_cm\quadrudep_hauner.o: D:\Program Files\IDE\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 smartdog_cm\quadrudep_hauner.o: D:\Program Files\IDE\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+smartdog_cm\quadrudep_hauner.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+smartdog_cm\quadrudep_hauner.o: ../Core/Inc/FreeRTOSConfig.h
+smartdog_cm\quadrudep_hauner.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+smartdog_cm\quadrudep_hauner.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+smartdog_cm\quadrudep_hauner.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+smartdog_cm\quadrudep_hauner.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h
+smartdog_cm\quadrudep_hauner.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+smartdog_cm\quadrudep_hauner.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h
+smartdog_cm\quadrudep_hauner.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+smartdog_cm\quadrudep_hauner.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
+smartdog_cm\quadrudep_hauner.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h
+smartdog_cm\quadrudep_hauner.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
+smartdog_cm\quadrudep_hauner.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h

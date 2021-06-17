@@ -39,3 +39,45 @@ JY901九轴https://blog.csdn.net/Fred_1986/article/details/108350958
 为什么不直接用usb进行通讯呢
 USB虚拟串口https://blog.csdn.net/qq_36561846/article/details/109427606
 
+今日工作
+Dog_interface 包含控制程序，可以直接在此处枚举增加功能
+	bluetoothController为蓝牙控制器
+	Gait_Controller为运动控制器
+
+test_workspace 包含步态解算程序，可以直接移植，并写到Dog_interface中
+
+此外具有多个外设操作
+IIC同时控制OLED（如OLED_ShowStr(6, 2, str, 1);）与JY901（JY901_RDDat(&IMU);）
+USART1与蓝牙通讯，使用printf函数信息反馈到蓝牙上
+USART2与舵机控制板通讯
+USB可以使用usb_printf函数打印信息
+
+下次更新usb与ros通讯程序
+
+2021/06/16 小雨，数据结构考炸了
+今日计划测试单
+	F4控制运行测试
+	蓝牙通讯保护帧
+	
+	加减速测试  重点
+		分析，考虑到单纯的降速，舵机移动速度同样会很快，因此这个方案不好
+		最好在通讯协议中增加时间参数
+			上个说法是有问题的，很难保证同步
+		考虑增加步数的方式
+		或者delay函数同步的方法
+	
+运行速度控制器
+	开一个定时器控制底层驱动，同时控制信号量
+	姿态控制器将会根据信号量
+	
+	传输完毕释放信号量
+	
+	控制系统优化
+	
+2021/06/16
+MOD 0 /n
+VAR
+
+
+
+
