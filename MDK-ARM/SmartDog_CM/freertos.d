@@ -1,7 +1,7 @@
 smartdog_cm\freertos.o: ../Core/Src/freertos.c
 smartdog_cm\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-smartdog_cm\freertos.o: D:\Program Files\IDE\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-smartdog_cm\freertos.o: D:\Program Files\IDE\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+smartdog_cm\freertos.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stddef.h
+smartdog_cm\freertos.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
 smartdog_cm\freertos.o: ../Core/Inc/FreeRTOSConfig.h
 smartdog_cm\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 smartdog_cm\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
@@ -47,13 +47,13 @@ smartdog_cm\freertos.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h
 smartdog_cm\freertos.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h
 smartdog_cm\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h
 smartdog_cm\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h
-smartdog_cm\freertos.o: D:\Program Files\IDE\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+smartdog_cm\freertos.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
 smartdog_cm\freertos.o: ../Core/Inc/usart.h
 smartdog_cm\freertos.o: ../USB_DEVICE/App/usb_device.h
 smartdog_cm\freertos.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h
 smartdog_cm\freertos.o: ../USB_DEVICE/Target/usbd_conf.h
-smartdog_cm\freertos.o: D:\Program Files\IDE\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-smartdog_cm\freertos.o: D:\Program Files\IDE\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+smartdog_cm\freertos.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
+smartdog_cm\freertos.o: D:\Keil5\ARM\ARMCC\Bin\..\include\string.h
 smartdog_cm\freertos.o: ../USB_DEVICE/App/usbd_cdc_if.h
 smartdog_cm\freertos.o: ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc/usbd_cdc.h
 smartdog_cm\freertos.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h

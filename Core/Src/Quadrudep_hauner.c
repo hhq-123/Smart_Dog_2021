@@ -137,7 +137,8 @@ void ik_3dof(double x[], double y[], double z[])
 
 void gait_Init(void)
 {
-	double inx[4] = {0,0,0,0};
+	int zero = -30;
+	double inx[4] = {zero,zero,zero,zero};
 	double iny[4] = {H,H,H,H};
 	double inz[4] = {d, d, d ,d};
 	ik_3dof(inx, iny, inz);

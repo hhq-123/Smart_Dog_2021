@@ -1,8 +1,8 @@
 smartdog_cm\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/event_groups.c
-smartdog_cm\event_groups.o: D:\Program Files\IDE\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+smartdog_cm\event_groups.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
 smartdog_cm\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-smartdog_cm\event_groups.o: D:\Program Files\IDE\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-smartdog_cm\event_groups.o: D:\Program Files\IDE\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+smartdog_cm\event_groups.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stddef.h
+smartdog_cm\event_groups.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
 smartdog_cm\event_groups.o: ../Core/Inc/FreeRTOSConfig.h
 smartdog_cm\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 smartdog_cm\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h

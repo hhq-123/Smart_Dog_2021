@@ -16,6 +16,8 @@
 uint8_t state_change_flag = 0;
 int speed = 10;
 
+uint8_t Dog_command_state = 0;
+
 extern uint16_t LSCControlPeriod;
 
 enum Flag{
@@ -36,21 +38,46 @@ enum Flag{
 };
 
 uint8_t motion_Flag[Flag_rest] = {0};
+int Dog_state[11] = {0};//第一状态 第二状态 八个参数
 
 void bluetoothTranslater(uint8_t BTdata[])
 {
-	switch(BTdata[0])
-	{
-		case 'M':
-			bluetoothStateController(BTdata[1]);
-			break;
-		case 'V':
-			
-			break;
-	}
+	printf("bluetoothTranslater\n\r");
+	//printf("%d %d %d\n\r", BTdata[0],BTdata[1], BTdata[2]);
+	if(BTdata[0]==0x55&&BTdata[1]==0x55)
+		Dog_command_state = BTdata[3];
+		switch(BTdata[3])
+		{
+			case 0:
+				//bluetoothStateController(&BTdata[3]);
+				printf("Error\n\r");
+				break;
+			case 1:
+				bluetoothStateController(BTdata);
+				printf("StateController\n\r");
+				break;
+			case 2:
+				bluetoothMoveController(BTdata);
+				break;
+		}
 }
 
-void bluetoothDataController(uint8_t motion_state)
+void bluetoothStateController(uint8_t BTCommand[])
+{
+	if(BTCommand[2]==0x0B)
+		//printf("%s", BTCommand);
+	{
+		Dog_state[0] = BTCommand[3];
+		Dog_state[1] = BTCommand[4];
+		sscanf(BTCommand+5,"%d %d %d %d %d %d %d %d", &Dog_state[2], &Dog_state[3], &Dog_state[4],&Dog_state[5], &Dog_state[6], &Dog_state[7],&Dog_state[8],&Dog_state[9]);
+	}
+	else
+		printf("State Command Error!");
+	
+	printf("%d %d %d %d %d %d %d %d\n\r", Dog_state[2],Dog_state[3], Dog_state[4], Dog_state[5], Dog_state[6],Dog_state[7], Dog_state[8], Dog_state[9]);
+}
+
+void bluetoothDataController(uint8_t BTCommand[])
 {
 //	case '+': 
 //		if(LSCControlPeriod > 50)
@@ -62,65 +89,12 @@ void bluetoothDataController(uint8_t motion_state)
 //		break;
 }
 
-void bluetoothStateController(uint8_t motion_state)
+void bluetoothMoveController(uint8_t BTCommand[])
 {
-	memset(motion_Flag,0,sizeof(motion_Flag));
-	switch(motion_state)
+	if(BTCommand[2]==0x03)
 	{
-		case '0': 
-			LSCControlPeriod = 50;
-			motion_Flag[Flag_trot] = 1;
-			printf("trot\n\r");
-		break;
-		case '1': 
-			LSCControlPeriod = 150;
-			motion_Flag[Flag_walk] = 1;
-			printf("walk\n\r");
-		break;
-		case '2': 
-			motion_Flag[Flag_stand] = 1;
-			printf("stand\n\r");
-		break;
-		case '3': 
-			motion_Flag[Flag_dance] = 1;
-			printf("dance\n\r");
-		break;
-		case '4': 
-			motion_Flag[Flag_bend] = 1;
-			printf("bend\n\r");
-		break;
-		case '5': 
-			motion_Flag[Flag_balance] = 1;
-			printf("balance\n\r");
-		break;
-		case '6': 
-			motion_Flag[Flag_walk_bend] = 1;
-			printf("walk_bend\n\r");
-		break;
-		case '7': 
-			LSCControlPeriod = 50;
-			motion_Flag[Flag_crab_L] = 1;
-			printf("crab_L\n\r");
-		break;
-		case '8': 
-			LSCControlPeriod = 50;
-			motion_Flag[Flag_crab_R] = 1;
-			printf("crab_R\n\r");
-		break;
-		case '9': 
-			LSCControlPeriod = 50;
-			motion_Flag[Flag_round_L] = 1;
-			printf("round_L\n\r");
-		break;
-		case 'a': 
-			LSCControlPeriod = 50;
-			motion_Flag[Flag_round_R] = 1;
-			printf("round_R\n\r");
-		break;
-		case 'b': 
-			motion_Flag[Flag_stand_up] = 1;
-			printf("stand_up\n\r");
-		break;
+		Dog_state[0] = BTCommand[3];
+		Dog_state[1] = BTCommand[4];
 	}
 	state_change_flag = 1;
 }
@@ -133,17 +107,87 @@ void Gait_Controller(void)
 		state_change_flag = 0;
 		OLED_Clear();
 	}
-	if(motion_Flag[Flag_trot])			Trot_run();
-	if(motion_Flag[Flag_walk])			Walk_run();
-	if(motion_Flag[Flag_stand])			Stand_run();
-	if(motion_Flag[Flag_dance])			Dance_run();
-	if(motion_Flag[Flag_bend])			Bend_run();
-	if(motion_Flag[Flag_balance])		Balance_run();
-	if(motion_Flag[Flag_walk_bend])	Walk_Bend_run();
-	if(motion_Flag[Flag_crab_L])		Crab_L_run();
-	if(motion_Flag[Flag_crab_R])		Crab_R_run();
-	if(motion_Flag[Flag_round_L])		Round_L_run();
-	if(motion_Flag[Flag_round_R])		Round_R_run();
-	if(motion_Flag[Flag_stand_up])	Stand_Up_run();
-	if(motion_Flag[Flag_power_down])	Power_down();
+	switch(Dog_state[0])
+	{
+		case 0:
+			osDelay(10);
+			break;
+			
+		case 1:
+			switch(Dog_state[1])
+			{
+				case 0:
+					//printf("trot\n\r");
+					Trot_state(Dog_state[2], Dog_state[3],Dog_state[4],Dog_state[5],Dog_state[6],Dog_state[7],Dog_state[8],Dog_state[9]);
+				break;
+				case 1:
+					Walk_state(Dog_state[2], Dog_state[3],Dog_state[4],Dog_state[5],Dog_state[6],Dog_state[7],Dog_state[8],Dog_state[9]);
+					//printf("walk\n\r");
+				break;
+				case 2:
+					//printf("crab\n\r");
+					Crab_state(Dog_state[2], Dog_state[3],Dog_state[4],Dog_state[5],Dog_state[6],Dog_state[7],Dog_state[8],Dog_state[9]);
+				break;
+				case 3:
+					//printf("round\n\r");
+					Round_state(Dog_state[2], Dog_state[3],Dog_state[4],Dog_state[5],Dog_state[6],Dog_state[7],Dog_state[8],Dog_state[9]);
+				//Step_state(Dog_state[2], Dog_state[3],Dog_state[4]);
+				break;
+			}
+			break;
+		case 2:
+			switch(Dog_state[1])
+    {
+     case 0:
+      Trot_run();
+     //printf("Trot_run\n\r");
+     break;
+     case 1:
+      Walk_run();
+     //printf("Walk_run\n\r");
+     break;
+     case 2:
+      Step_run();
+     //printf("Stand_run\n\r");
+     break;
+     case 3:
+      Stand_run();
+     //printf("Dance_run\n\r");
+     break;
+     case 4:
+      Crab_L_run();
+     break;
+     case 5:
+      Round_L_run();
+     break;
+     case 6:
+      Round_R_run();
+     break;
+     case 7:
+      Crab_R_run();
+     break;
+     case 8:
+      Balance_run();
+     break;
+     case 9:
+      Dance_run();
+     break;
+     case 10:
+      Move_zero(1000);
+     break;
+     case 11:
+      Power_down();
+     break;
+     default:
+      osDelay(10);
+    }
+		break;
+		case 3:
+			osDelay(10);
+			break;
+		default:
+			osDelay(10);
+	}
+	
+	
 }

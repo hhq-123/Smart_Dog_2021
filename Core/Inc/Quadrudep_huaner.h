@@ -5,17 +5,18 @@
 
 #define Move_t 1
 #define LF_wai_Init  1560
-#define LF_ham_Init  1396
-#define LF_shank_Init  1500//1589
-#define RF_wai_Init  1442
+#define LF_ham_Init  1383
+#define LF_shank_Init  1589
+#define RF_wai_Init  1434
 #define RF_ham_Init  1510
-#define RF_shank_Init  1500//1340
-#define RB_wai_Init  1476
+#define RF_shank_Init  1470
+#define RB_wai_Init  1452
 #define RB_ham_Init  1400
-#define RB_shank_Init  1500//1578
-#define LB_wai_Init  1448
-#define LB_ham_Init  1480
-#define LB_shank_Init  1500//1569
+#define RB_shank_Init  1470
+#define LB_wai_Init  1460
+#define LB_ham_Init  1394
+#define LB_shank_Init  1569
+
 
 #define H 180
 #define d 60

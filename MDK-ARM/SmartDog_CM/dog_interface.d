@@ -2,16 +2,16 @@ smartdog_cm\dog_interface.o: ..\Core\Src\Dog_interface.c
 smartdog_cm\dog_interface.o: ../Core/Inc/Dog_interface.h
 smartdog_cm\dog_interface.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xc.h
 smartdog_cm\dog_interface.o: ../Drivers/CMSIS/Include/core_cm4.h
-smartdog_cm\dog_interface.o: D:\Program Files\IDE\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+smartdog_cm\dog_interface.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
 smartdog_cm\dog_interface.o: ../Drivers/CMSIS/Include/cmsis_version.h
 smartdog_cm\dog_interface.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 smartdog_cm\dog_interface.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
 smartdog_cm\dog_interface.o: ../Drivers/CMSIS/Include/mpu_armv7.h
 smartdog_cm\dog_interface.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h
-smartdog_cm\dog_interface.o: D:\Program Files\IDE\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-smartdog_cm\dog_interface.o: D:\Program Files\IDE\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+smartdog_cm\dog_interface.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
+smartdog_cm\dog_interface.o: D:\Keil5\ARM\ARMCC\Bin\..\include\string.h
 smartdog_cm\dog_interface.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-smartdog_cm\dog_interface.o: D:\Program Files\IDE\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+smartdog_cm\dog_interface.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stddef.h
 smartdog_cm\dog_interface.o: ../Core/Inc/FreeRTOSConfig.h
 smartdog_cm\dog_interface.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 smartdog_cm\dog_interface.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h

@@ -3,7 +3,7 @@ smartdog_cm\test_workspace.o: ../Core/Inc/test_workspace.h
 smartdog_cm\test_workspace.o: ../Core/Inc/Quadrudep_huaner.h
 smartdog_cm\test_workspace.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xc.h
 smartdog_cm\test_workspace.o: ../Drivers/CMSIS/Include/core_cm4.h
-smartdog_cm\test_workspace.o: D:\Program Files\IDE\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+smartdog_cm\test_workspace.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
 smartdog_cm\test_workspace.o: ../Drivers/CMSIS/Include/cmsis_version.h
 smartdog_cm\test_workspace.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 smartdog_cm\test_workspace.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
@@ -14,9 +14,9 @@ smartdog_cm\test_workspace.o: ../Middlewares/ST/STM32_USB_Device_Library/Class/C
 smartdog_cm\test_workspace.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h
 smartdog_cm\test_workspace.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h
 smartdog_cm\test_workspace.o: ../USB_DEVICE/Target/usbd_conf.h
-smartdog_cm\test_workspace.o: D:\Program Files\IDE\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-smartdog_cm\test_workspace.o: D:\Program Files\IDE\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-smartdog_cm\test_workspace.o: D:\Program Files\IDE\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+smartdog_cm\test_workspace.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
+smartdog_cm\test_workspace.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
+smartdog_cm\test_workspace.o: D:\Keil5\ARM\ARMCC\Bin\..\include\string.h
 smartdog_cm\test_workspace.o: ../Core/Inc/main.h
 smartdog_cm\test_workspace.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 smartdog_cm\test_workspace.o: ../Core/Inc/stm32f4xx_hal_conf.h
@@ -25,7 +25,7 @@ smartdog_cm\test_workspace.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_
 smartdog_cm\test_workspace.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 smartdog_cm\test_workspace.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 smartdog_cm\test_workspace.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-smartdog_cm\test_workspace.o: D:\Program Files\IDE\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+smartdog_cm\test_workspace.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stddef.h
 smartdog_cm\test_workspace.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h
 smartdog_cm\test_workspace.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h
 smartdog_cm\test_workspace.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h
@@ -49,6 +49,17 @@ smartdog_cm\test_workspace.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_
 smartdog_cm\test_workspace.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h
 smartdog_cm\test_workspace.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h
 smartdog_cm\test_workspace.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h
-smartdog_cm\test_workspace.o: D:\Program Files\IDE\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+smartdog_cm\test_workspace.o: D:\Keil5\ARM\ARMCC\Bin\..\include\math.h
 smartdog_cm\test_workspace.o: ../Core/Inc/JY901.h
 smartdog_cm\test_workspace.o: ../Core/Inc/OLED.h
+smartdog_cm\test_workspace.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/freeRTOS.h
+smartdog_cm\test_workspace.o: ../Core/Inc/FreeRTOSConfig.h
+smartdog_cm\test_workspace.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+smartdog_cm\test_workspace.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+smartdog_cm\test_workspace.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+smartdog_cm\test_workspace.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h
+smartdog_cm\test_workspace.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+smartdog_cm\test_workspace.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+smartdog_cm\test_workspace.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
+smartdog_cm\test_workspace.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h
+smartdog_cm\test_workspace.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h

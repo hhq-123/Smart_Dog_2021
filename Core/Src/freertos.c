@@ -72,7 +72,7 @@ osThreadId_t defaultTaskHandle;
 const osThreadAttr_t defaultTask_attributes = {
   .name = "defaultTask",
   .priority = (osPriority_t) osPriorityNormal,
-  .stack_size = 512 * 4
+  .stack_size = 1024 * 4
 };
 /* Definitions for usart1RxTask */
 osThreadId_t usart1RxTaskHandle;
@@ -200,8 +200,8 @@ void StartUsart1RxTask(void *argument)
   for(;;)
   {
 		xQueueReceive(usart1RxMsgQueueHandle, (void*)&pUARTR1, osWaitForever);
-		bluetoothTranslater(pUARTR1.RxBuff);
 		printf("UARTR1: \"%s \" ends\r\n", pUARTR1.RxBuff);
+		bluetoothTranslater(pUARTR1.RxBuff);
   }
   /* USER CODE END StartUsart1RxTask */
 }
@@ -213,7 +213,7 @@ void LSCControlCallback(void *argument)
 	
 	
 	LSCControlTimerCount++;
-	if(LSCControlTimerCount == LSCControlPeriod)
+	if(LSCControlTimerCount >= LSCControlPeriod)
 	{
 		LSC_communication();
 		xSemaphoreGive(gaitControlBinarySemHandle);

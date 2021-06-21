@@ -1,4 +1,4 @@
---cpu=Cortex-M4.fp
+--cpu Cortex-M4.fp
 "smartdog_cm\startup_stm32f401xc.o"
 "smartdog_cm\lobotservocontroller.o"
 "smartdog_cm\quadrudep_hauner.o"
@@ -56,6 +56,6 @@
 "smartdog_cm\usbd_ioreq.o"
 "smartdog_cm\usbd_cdc.o"
 --library_type=microlib --strict --scatter "SmartDog_CM\SmartDog_CM.sct"
---summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list "SmartDog_CM.map" -o SmartDog_CM\SmartDog_CM.axf

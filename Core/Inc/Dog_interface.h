@@ -3,9 +3,10 @@
 #include "stm32f401xc.h"
 
 void bluetoothTranslater(uint8_t BTdata[]);
-void bluetoothDataController(uint8_t motion_state);
-void bluetoothStateController(uint8_t motion_state);
 
+void bluetoothStateController(uint8_t BTCommand[]);
+void bluetoothMoveController(uint8_t BTCommand[]);
+void bluetoothDataController(uint8_t BTCommand[]);
 void Gait_Controller(void);
 
 #endif

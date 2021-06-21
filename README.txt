@@ -78,6 +78,14 @@ USB可以使用usb_printf函数打印信息
 MOD 0 /n
 VAR
 
+步态切换http://gxbwk.njournal.sdu.edu.cn/fileup/1672-3961/HTML/2018-4-42.htm
+
+https://blog.csdn.net/Electrical_IT/article/details/107221567
+https://blog.csdn.net/linmh0130/article/details/84494428?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522162397794516780269842920%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=162397794516780269842920&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_v2~rank_v29-3-84494428.pc_search_result_before_js&utm_term=py%E4%B8%B2%E5%8F%A3%E6%97%A0%E5%93%8D%E5%BA%94&spm=1018.2226.3001.4187
 
 
+2021/06/18
+ros通讯https://blog.csdn.net/xiaoyuanwuhui/article/details/97895473?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522162410192816780265480074%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=162410192816780265480074&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_v2~rank_v29-2-97895473.pc_search_result_before_js&utm_term=ros+usb+F4&spm=1018.2226.3001.4187
+https://blog.csdn.net/qq_36349536/article/details/82773064?ops_request_misc=&request_id=&biz_id=102&utm_term=ros%20usb%20F4&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-5-.nonecase&spm=1018.2226.3001.4187
+https://blog.csdn.net/leida_wt/article/details/109690562?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522162410679616780262524666%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=162410679616780262524666&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~baidu_landing_v2~default-7-109690562.pc_search_result_before_js&utm_term=stm32+ros+&spm=1018.2226.3001.4187
 
