@@ -731,11 +731,11 @@ ARM Macro Assembler    Page 12
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp --apcs=int
 erwork --depend=smartdog_cm\startup_stm32f401xc.d -osmartdog_cm\startup_stm32f4
-01xc.o -I..\Core\Inc -IC:\Users\13684\Desktop\SmartDog_CM_hhq123_20210619_1922\
-MDK-ARM\RTE -ID:\Keil5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include -ID:\Keil5\ARM\PA
-CK\Keil\STM32F4xx_DFP\2.12.0 --predefine="__MICROLIB SETA 1" --predefine="__UVI
-SION_VERSION SETA 514" --predefine="_RTE_ SETA 1" --predefine="STM32F401xC SETA
- 1" --list=startup_stm32f401xc.lst startup_stm32f401xc.s
+01xc.o -I..\Core\Inc -I.\RTE\_SmartDog_CM -ID:\AppData\Local\Arm\Packs\ARM\CMSI
+S\5.5.1\CMSIS\Core\Include -ID:\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.9.
+0\Drivers\CMSIS\Device\ST\STM32F4xx\Include --predefine="__MICROLIB SETA 1" --p
+redefine="__UVISION_VERSION SETA 528" --predefine="_RTE_ SETA 1" --predefine="S
+TM32F401xC SETA 1" --list=startup_stm32f401xc.lst startup_stm32f401xc.s
 
 
 

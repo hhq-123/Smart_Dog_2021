@@ -1,8 +1,8 @@
 smartdog_cm\cmsis_os2.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c
-smartdog_cm\cmsis_os2.o: D:\Keil5\ARM\ARMCC\Bin\..\include\string.h
+smartdog_cm\cmsis_os2.o: D:\Program Files\IDE\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 smartdog_cm\cmsis_os2.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h
-smartdog_cm\cmsis_os2.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
-smartdog_cm\cmsis_os2.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stddef.h
+smartdog_cm\cmsis_os2.o: D:\Program Files\IDE\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+smartdog_cm\cmsis_os2.o: D:\Program Files\IDE\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 smartdog_cm\cmsis_os2.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 smartdog_cm\cmsis_os2.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
 smartdog_cm\cmsis_os2.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h

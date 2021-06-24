@@ -137,50 +137,50 @@ void Gait_Controller(void)
 			break;
 		case 2:
 			switch(Dog_state[1])
-    {
-     case 0:
-      Trot_run();
-     //printf("Trot_run\n\r");
-     break;
-     case 1:
-      Walk_run();
-     //printf("Walk_run\n\r");
-     break;
-     case 2:
-      Step_run();
-     //printf("Stand_run\n\r");
-     break;
-     case 3:
-      Stand_run();
-     //printf("Dance_run\n\r");
-     break;
-     case 4:
-      Crab_L_run();
-     break;
-     case 5:
-      Round_L_run();
-     break;
-     case 6:
-      Round_R_run();
-     break;
-     case 7:
-      Crab_R_run();
-     break;
-     case 8:
-      Balance_run();
-     break;
-     case 9:
-      Dance_run();
-     break;
-     case 10:
-      Move_zero(1000);
-     break;
-     case 11:
-      Power_down();
-     break;
-     default:
-      osDelay(10);
-    }
+			{
+			 case 0:
+				Trot_run();
+			 //printf("Trot_run\n\r");
+			 break;
+			 case 1:
+				Walk_run();
+			 //printf("Walk_run\n\r");
+			 break;
+			 case 2:
+				Step_run();
+			 //printf("Stand_run\n\r");
+			 break;
+			 case 3:
+				Stand_run();
+			 //printf("Dance_run\n\r");
+			 break;
+			 case 4:
+				Crab_L_run();
+			 break;
+			 case 5:
+				Round_L_run();
+			 break;
+			 case 6:
+				Round_R_run();
+			 break;
+			 case 7:
+				Crab_R_run();
+			 break;
+			 case 8:
+				Balance_run();
+			 break;
+			 case 9:
+				Dance_run();
+			 break;
+			 case 10:
+				Move_zero(1000);
+			 break;
+			 case 11:
+				Power_down();
+			 break;
+			 default:
+				osDelay(10);
+			}
 		break;
 		case 3:
 			osDelay(10);
@@ -188,6 +188,4 @@ void Gait_Controller(void)
 		default:
 			osDelay(10);
 	}
-	
-	
 }

@@ -17,7 +17,7 @@ double Pedis_x[4];
 double Pedis_y[4];
 double Pedis_z[4];
 
-#define Ts 10
+#define Ts 8
 int Test_t = 10;
 int Test_i = 0;
 int t = 0;
@@ -537,6 +537,7 @@ void Stand_run(void)
 void Dance_run(void)
 {
 }
+
 void Bend_run(void)
 {
 	osDelay(10);

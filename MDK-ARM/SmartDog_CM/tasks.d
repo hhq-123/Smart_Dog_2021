@@ -1,9 +1,9 @@
 smartdog_cm\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/tasks.c
-smartdog_cm\tasks.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
-smartdog_cm\tasks.o: D:\Keil5\ARM\ARMCC\Bin\..\include\string.h
+smartdog_cm\tasks.o: D:\Program Files\IDE\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+smartdog_cm\tasks.o: D:\Program Files\IDE\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 smartdog_cm\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-smartdog_cm\tasks.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stddef.h
-smartdog_cm\tasks.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
+smartdog_cm\tasks.o: D:\Program Files\IDE\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+smartdog_cm\tasks.o: D:\Program Files\IDE\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 smartdog_cm\tasks.o: ../Core/Inc/FreeRTOSConfig.h
 smartdog_cm\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 smartdog_cm\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
