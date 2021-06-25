@@ -1,8 +1,7 @@
 --cpu=Cortex-M4.fp
 "smartdog_cm\startup_stm32f401xc.o"
 "smartdog_cm\lobotservocontroller.o"
-"smartdog_cm\quadrudep_hauner.o"
-"smartdog_cm\test_workspace.o"
+"smartdog_cm\quadruped_hauner.o"
 "smartdog_cm\oled.o"
 "smartdog_cm\jy901.o"
 "smartdog_cm\dog_interface.o"
@@ -15,6 +14,7 @@
 "smartdog_cm\stm32f4xx_it.o"
 "smartdog_cm\stm32f4xx_hal_msp.o"
 "smartdog_cm\stm32f4xx_hal_timebase_tim.o"
+"smartdog_cm\test_workspace.o"
 "smartdog_cm\stm32f4xx_hal_pcd.o"
 "smartdog_cm\stm32f4xx_hal_pcd_ex.o"
 "smartdog_cm\stm32f4xx_ll_usb.o"

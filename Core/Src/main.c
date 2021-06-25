@@ -31,7 +31,7 @@
 #include "stdio.h"
 #include "usbd_cdc_if.h"
 #include "test_workspace.h"
-#include "Quadrudep_huaner.h"
+#include "Quadruped_huaner.h"
 #include "OLED.h"
 #include "JY901.h"
 /* USER CODE END Includes */

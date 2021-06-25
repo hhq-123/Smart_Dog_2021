@@ -1,4 +1,4 @@
-#include "Quadrudep_huaner.h"
+#include "Quadruped_huaner.h"
 #include <LobotServoController.h>
 #include "math.h"
 #include "stdio.h"
@@ -137,7 +137,7 @@ void ik_3dof(double x[], double y[], double z[])
 
 void gait_Init(void)
 {
-	int zero = -30;
+	int zero = -50;
 	double inx[4] = {zero,zero,zero,zero};
 	double iny[4] = {H,H,H,H};
 	double inz[4] = {d, d, d ,d};

@@ -64,6 +64,6 @@ smartdog_cm\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue
 smartdog_cm\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 smartdog_cm\freertos.o: ../Core/Inc/LobotServoController.h
 smartdog_cm\freertos.o: ../Core/Inc/bool.h
-smartdog_cm\freertos.o: ../Core/Inc/Quadrudep_huaner.h
+smartdog_cm\freertos.o: ../Core/Inc/Quadruped_huaner.h
 smartdog_cm\freertos.o: ../Core/Inc/test_workspace.h
 smartdog_cm\freertos.o: ../Core/Inc/Dog_interface.h

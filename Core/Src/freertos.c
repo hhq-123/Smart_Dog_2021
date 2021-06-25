@@ -37,7 +37,7 @@
 #include "semphr.h"
 
 #include "LobotServoController.h"
-#include "Quadrudep_huaner.h"
+#include "Quadruped_huaner.h"
 #include "test_workspace.h"
 
 #include "Dog_interface.h"

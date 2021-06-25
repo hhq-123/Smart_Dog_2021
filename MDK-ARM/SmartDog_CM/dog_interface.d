@@ -22,6 +22,6 @@ smartdog_cm\dog_interface.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/
 smartdog_cm\dog_interface.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
 smartdog_cm\dog_interface.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h
 smartdog_cm\dog_interface.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h
-smartdog_cm\dog_interface.o: ../Core/Inc/Quadrudep_huaner.h
+smartdog_cm\dog_interface.o: ../Core/Inc/Quadruped_huaner.h
 smartdog_cm\dog_interface.o: ../Core/Inc/OLED.h
 smartdog_cm\dog_interface.o: ../Core/Inc/test_workspace.h

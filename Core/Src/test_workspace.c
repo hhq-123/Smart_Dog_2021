@@ -1,5 +1,5 @@
 #include "test_workspace.h"
-#include "Quadrudep_huaner.h"
+#include "Quadruped_huaner.h"
 #include "usbd_cdc_if.h"
 #include "stdio.h"
 #include "math.h"
@@ -42,7 +42,7 @@ double PId_algo(PId_struct_typedef *PId, double fdb) {
 
 void gait_trot(int t, double xs, double xf, double h, double r1, double r2, double r3, double r4) 
 {
-	double kkk =0;
+	double kkk =0.2;
 	double sigma = 0.0;
 	
 	double zep, xep_b, xep_z;
@@ -117,7 +117,7 @@ void gait_walk(double t, double xs, double xf, double h, double r1, double r2, d
 	double sigma = 0.0;
 	double zep, xep_b, xep_z;
 	int   kkk =0;
-	int Zero = -40;
+	int Zero = -60;
 	
   double faai = 0.2;
   double k_walk=0;
@@ -206,10 +206,10 @@ void gait_walk(double t, double xs, double xf, double h, double r1, double r2, d
     xep_zs = -0.05 * S + 0.05 * S * ((sigma - sin(sigma)) / (2 * PI)); //-S/20~0
     Pedis_x[0] = Pedis_x[0] + xep_zs;  Pedis_x[1] = Pedis_x[1] + xep_zs; Pedis_x[2] = Pedis_x[2] + xep_zs; Pedis_x[3] = Pedis_x[3] + xep_zs;
   }
-	Pedis_x[0]=Pedis_x[0]-33;
-	Pedis_x[1]=Pedis_x[1]-33;
-	Pedis_x[2]=Pedis_x[2]-33;
-	Pedis_x[3]=Pedis_x[3]-33;
+	Pedis_x[0]=Pedis_x[0]+Zero;
+	Pedis_x[1]=Pedis_x[1]+Zero;
+	Pedis_x[2]=Pedis_x[2]+Zero;
+	Pedis_x[3]=Pedis_x[3]+Zero;
 }
 
 
@@ -220,7 +220,7 @@ void gait_crab(int t, double xs, double xf, double h, double r1, double r2, doub
 	double sigma = 0.0;
 	double zep, xep_b, xep_z;
 	int   kkk =0;
-	int Zero = -38;
+	int Zero = -40;
   if (t <= (Ts /2))
   {
 		sigma = 4 * PI * t / Ts;
@@ -287,7 +287,7 @@ void gait_round(int t, double xs, double xf, double h, double r1, double r2, dou
 	double sigma = 0.0;
 	double zep, xep_b, xep_z;
 	int   kkk =0;
-	int Zero = -38;
+	int Zero = -40;
   if (t <= (Ts /2))
   {
 		sigma = 4 * PI * t / Ts;
@@ -352,7 +352,7 @@ void gait_round(int t, double xs, double xf, double h, double r1, double r2, dou
 
 void gait_step(int t, double h, double zero_step)
 {
-	double kkk =0;
+	double kkk =0.3;
 	double sigma = 0.0;
 	
 	double zep, xep_b, xep_z;
@@ -517,12 +517,12 @@ void Balance_state(double sp)
 
 void Trot_run(void)
 {
-  Trot_state(50, 8, -60, 50, 1, 1, 1, 1);
+  Trot_state(65, 10, -80, 50, 1, 1, 1, 1);
 }
 
 void Walk_run(void)
 {
-	Walk_state(150, 0, 85,60, 1,1,1,1);
+	Walk_state(110, 0, 110,60, 1,1,1,1);
 }
 
 
@@ -565,7 +565,7 @@ void Crab_R_run(void)
 
 void Round_L_run(void)
 {
-  Round_state(60, 0, -40, 40, 1, 1, 1, 1);
+  Round_state(70, 30, -30, 60, 1, 1, 1, 1);
 }
 
 void Round_R_run(void)

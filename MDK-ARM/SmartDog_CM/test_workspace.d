@@ -1,6 +1,6 @@
-smartdog_cm\test_workspace.o: test_workspace.c
+smartdog_cm\test_workspace.o: ..\Core\Src\test_workspace.c
 smartdog_cm\test_workspace.o: ../Core/Inc/test_workspace.h
-smartdog_cm\test_workspace.o: ../Core/Inc/Quadrudep_huaner.h
+smartdog_cm\test_workspace.o: ../Core/Inc/Quadruped_huaner.h
 smartdog_cm\test_workspace.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xc.h
 smartdog_cm\test_workspace.o: ../Drivers/CMSIS/Include/core_cm4.h
 smartdog_cm\test_workspace.o: D:\Program Files\IDE\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h

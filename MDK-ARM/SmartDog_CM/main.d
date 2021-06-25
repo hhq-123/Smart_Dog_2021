@@ -64,6 +64,6 @@ smartdog_cm\main.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_cor
 smartdog_cm\main.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h
 smartdog_cm\main.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h
 smartdog_cm\main.o: ../Core/Inc/test_workspace.h
-smartdog_cm\main.o: ../Core/Inc/Quadrudep_huaner.h
+smartdog_cm\main.o: ../Core/Inc/Quadruped_huaner.h
 smartdog_cm\main.o: ../Core/Inc/OLED.h
 smartdog_cm\main.o: ../Core/Inc/JY901.h

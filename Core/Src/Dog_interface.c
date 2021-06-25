@@ -7,7 +7,7 @@
 #include "task.h"
 #include "cmsis_os.h"
 
-#include "Quadrudep_huaner.h"
+#include "Quadruped_huaner.h"
 
 #include "OLED.h"
 

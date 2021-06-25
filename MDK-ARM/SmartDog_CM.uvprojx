@@ -398,14 +398,9 @@
               <FilePath>..\Core\Src\LobotServoController.c</FilePath>
             </File>
             <File>
-              <FileName>Quadrudep_hauner.c</FileName>
+              <FileName>Quadruped_hauner.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Core\Src\Quadrudep_hauner.c</FilePath>
-            </File>
-            <File>
-              <FileName>test_workspace.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\test_workspace.c</FilePath>
+              <FilePath>..\Core\Src\Quadruped_hauner.c</FilePath>
             </File>
             <File>
               <FileName>OLED.c</FileName>
@@ -466,6 +461,11 @@
               <FileName>stm32f4xx_hal_timebase_tim.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Core/Src/stm32f4xx_hal_timebase_tim.c</FilePath>
+            </File>
+            <File>
+              <FileName>test_workspace.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\Src\test_workspace.c</FilePath>
             </File>
           </Files>
         </Group>

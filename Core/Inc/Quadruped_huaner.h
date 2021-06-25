@@ -1,5 +1,5 @@
-#ifndef QUADRYDEP_HUANER_H_
-#define QUADRYDEP_HUANER_H_
+#ifndef QUADRYPED_HUANER_H_
+#define QUADRYPED_HUANER_H_
 
 #include "stm32f401xc.h"
 
@@ -18,7 +18,7 @@
 #define LB_shank_Init  1569
 
 
-#define H 180
+#define H 150
 #define d 60
 #define l2 130
 #define l3 111
